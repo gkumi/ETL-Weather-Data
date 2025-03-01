@@ -12,10 +12,12 @@ echo "The forecasted temperature for noon tomorrow for $city : $fc_temp F"
 
 #Assign Country and City to variable TZ
 TZ='Morocco/Casablanca'
+
 # Use command substitution to store the current day, month, and year in corresponding shell variables:
 day=$(TZ='Morocco/Casablanca' date -u +%d) 
 month=$(TZ='Morocco/Casablanca' date +%m)
 year=$(TZ='Morocco/Casablanca' date +%Y)
 
+# Log the weathe
 record=$(echo -e "$year\t$month\t$day\t$obs_temp\t$fc_temp C")
 echo $record>>rx_poc.log
